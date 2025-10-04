@@ -79,19 +79,14 @@ class MODEL_SECTION_CH:
         iy=math.pi*(2*R)**4/64
         iz=math.pi*(2*R)**4/64
         Ai=math.pi*R**2
-        if(op[i]=='A'):
-          A.append(Ai)
-          Iy.append(iy)
-          Iz.append(iz)
-          Izy.append(0)
         if(op[i]=='R'):
           Ai=-Ai
           iy=-iy
           iz=-iz
-          A.append(Ai)
-          Iy.append(iy)
-          Iz.append(iz)
-          Izy.append(0)
+        A.append(Ai)
+        Iy.append(iy)
+        Iz.append(iz)
+        Izy.append(0)
         cnt=cnt+1 # only 1 point
 
       if(t[i]=='S'):
@@ -104,19 +99,6 @@ class MODEL_SECTION_CH:
           Ai=math.pi*r**2/2
           iy=0.00686*(2*r)**4
           iz=math.pi*(2*r)**4/128
-          if(op[i]=='A'):
-           A.append(Ai)
-           Iy.append(iy)
-           Iz.append(iz)
-           Izy.append(0)
-          if(op[i]=='R'):
-           Ai=-Ai
-           iy=-iy
-           iz=-iz
-           Iy.append(iy)
-           Iz.append(iz)
-           Izy.append(0)
-           A.append(Ai)
 
         if(sor[semi]=='B'): # bottom semicircle
           r=abs((y[cnt]+y[cnt+1])/2-y[cnt])
@@ -127,19 +109,6 @@ class MODEL_SECTION_CH:
           Ai=math.pi*r**2/2
           iy=0.00686*(2*r)**4
           iz=math.pi*(2*r)**4/128
-          if(op[i]=='A'):
-           A.append(Ai)
-           Iy.append(iy)
-           Iz.append(iz)
-           Izy.append(0)
-          if(op[i]=='R'):
-           Ai=-Ai
-           iy=-iy
-           iz=-iz
-           A.append(Ai)
-           Iy.append(iy)
-           Iz.append(iz)
-           Izy.append(0)
 
         if(sor[semi]=='R'): # right semicircle
           r=abs((z[cnt]+z[cnt+1])/2-z[cnt])
@@ -150,19 +119,6 @@ class MODEL_SECTION_CH:
           Ai=math.pi*r**2/2
           iy=0.00686*(2*r)**4
           iz=math.pi*(2*r)**4/128
-          if(op[i]=='A'):
-           A.append(Ai)
-           Iy.append(iy)
-           Iz.append(iz)
-           Izy.append(0)
-          if(op[i]=='R'):
-           Ai=-Ai
-           iy=-iy
-           iz=-iz
-           A.append(Ai)
-           Iy.append(iy)
-           Iz.append(iz)
-           Izy.append(0)
 
         if(sor[semi]=='L'): # left semicircle
           r=abs((z[cnt]+z[cnt+1])/2-z[cnt])
@@ -173,19 +129,15 @@ class MODEL_SECTION_CH:
           Ai=math.pi*r**2/2
           iy=0.00686*(2*r)**4
           iz=math.pi*(2*r)**4/128
-          if(op[i]=='A'):
-           A.append(Ai)
-           Iy.append(iy)
-           Iz.append(iz)
-           Izy.append(0)
-          if(op[i]=='R'):
+          
+        if(op[i]=='R'):
            Ai=-Ai
            iy=-iy
            iz=-iz
-           A.append(Ai)
-           Iy.append(iy)
-           Iz.append(iz)
-           Izy.append(0)
+        Iy.append(iy)
+        Iz.append(iz)
+        Izy.append(0)
+        A.append(Ai)
         
         cnt=cnt+2
         semi=semi+1
@@ -197,4 +149,3 @@ class MODEL_SECTION_CH:
 
       
       
-
